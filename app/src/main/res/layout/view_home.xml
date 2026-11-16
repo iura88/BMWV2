@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Vehicle Identity & Live GPS Speedometer Banner (Tap to Edit Vehicle Info) -->
+    <LinearLayout
+        android:id="@+id/cardVehicleHero"
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/bg_card_selectable"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <View
+            android:id="@+id/viewVehicleAccentBar"
+            android:layout_width="4dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="14dp"
+            android:background="@color/accent_orange" />
+
+        <ImageView
+            android:layout_width="112dp"
+            android:layout_height="44dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="Vehicle Silhouette"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_car_sedan" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvCarModelTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="sans-serif-medium"
+                    android:maxLines="1"
+                    android:text="BMW 320d (E46)"
+                    android:textColor="@color/text_primary"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tvCarTrimBadge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/bg_pill_badge"
+                    android:letterSpacing="0.06"
+                    android:paddingStart="8dp"
+                    android:paddingTop="2dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="2dp"
+                    android:text="M-SPORT PACK"
+                    android:textColor="@color/accent_orange"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvCarEngineSpec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:ellipsize="end"
+                android:letterSpacing="0.04"
+                android:maxLines="1"
+                android:text="2004  •  2.0L M47 DIESEL • COILOVERS  •  [MM • E46 • BMW]"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- Live Digital Speedometer Pill (Tap to switch KM/H <-> MPH) -->
+        <LinearLayout
+            android:id="@+id/layoutSpeedometer"
+            android:layout_width="92dp"
+            android:layout_height="64dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvSpeedValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:includeFontPadding="false"
+                android:text="0"
+                android:textColor="@color/text_primary"
+                android:textSize="28sp" />
+
+            <TextView
+                android:id="@+id/tvSpeedUnit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:letterSpacing="0.08"
+                android:text="KM/H"
+                android:textColor="@color/text_secondary"
+                android:textSize="10sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 2x2 CarPlay-Style Primary App Tiles -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <!-- Tile 1: Navigation -->
+            <LinearLayout
+                android:id="@+id/tileNav"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_card_selectable"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/ivTileNavIcon"
+                    android:layout_width="54dp"
+                    android:layout_height="54dp"
+                    android:contentDescription="@string/slot_nav_title"
+                    android:src="@drawable/ic_drawer_grid" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvTileNavTag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_pill_badge"
+                        android:letterSpacing="0.08"
+                        android:paddingStart="8dp"
+                        android:paddingTop="2dp"
+                        android:paddingEnd="8dp"
+                        android:paddingBottom="2dp"
+                        android:text="@string/slot_nav_tag"
+                        android:textColor="@color/accent_orange"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/tvTileNavTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:ellipsize="end"
+                        android:fontFamily="sans-serif-medium"
+                        android:maxLines="1"
+                        android:text="@string/slot_nav_title"
+                        android:textColor="@color/text_primary"
+                        android:textSize="21sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Tile 2: Media -->
+            <LinearLayout
+                android:id="@+id/tileMedia"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_card_selectable"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/ivTileMediaIcon"
+                    android:layout_width="54dp"
+                    android:layout_height="54dp"
+                    android:contentDescription="@string/slot_media_title"
+                    android:src="@drawable/ic_drawer_grid" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvTileMediaTag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_pill_badge"
+                        android:letterSpacing="0.08"
+                        android:paddingStart="8dp"
+                        android:paddingTop="2dp"
+                        android:paddingEnd="8dp"
+                        android:paddingBottom="2dp"
+                        android:text="@string/slot_media_tag"
+                        android:textColor="@color/accent_orange"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/tvTileMediaTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:ellipsize="end"
+                        android:fontFamily="sans-serif-medium"
+                        android:maxLines="1"
+                        android:text="@string/slot_media_title"
+                        android:textColor="@color/text_primary"
+                        android:textSize="21sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <!-- Tile 3: Phone -->
+            <LinearLayout
+                android:id="@+id/tilePhone"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_card_selectable"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/ivTilePhoneIcon"
+                    android:layout_width="54dp"
+                    android:layout_height="54dp"
+                    android:contentDescription="@string/slot_phone_title"
+                    android:src="@drawable/ic_drawer_grid" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvTilePhoneTag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_pill_badge"
+                        android:letterSpacing="0.08"
+                        android:paddingStart="8dp"
+                        android:paddingTop="2dp"
+                        android:paddingEnd="8dp"
+                        android:paddingBottom="2dp"
+                        android:text="@string/slot_phone_tag"
+                        android:textColor="@color/accent_orange"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/tvTilePhoneTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:ellipsize="end"
+                        android:fontFamily="sans-serif-medium"
+                        android:maxLines="1"
+                        android:text="@string/slot_phone_title"
+                        android:textColor="@color/text_primary"
+                        android:textSize="21sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Tile 4: System / Custom -->
+            <LinearLayout
+                android:id="@+id/tileFourth"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_card_selectable"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/ivTileFourthIcon"
+                    android:layout_width="54dp"
+                    android:layout_height="54dp"
+                    android:contentDescription="@string/slot_fourth_title"
+                    android:src="@drawable/ic_drawer_grid" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvTileFourthTag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_pill_badge"
+                        android:letterSpacing="0.08"
+                        android:paddingStart="8dp"
+                        android:paddingTop="2dp"
+                        android:paddingEnd="8dp"
+                        android:paddingBottom="2dp"
+                        android:text="@string/slot_fourth_tag"
+                        android:textColor="@color/accent_orange"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/tvTileFourthTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:ellipsize="end"
+                        android:fontFamily="sans-serif-medium"
+                        android:maxLines="1"
+                        android:text="@string/slot_fourth_title"
+                        android:textColor="@color/text_primary"
+                        android:textSize="21sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Bottom Now-Playing Strip with Album Art & Animated Equalizer -->
+    <LinearLayout
+        android:id="@+id/cardNowPlaying"
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_card_selectable"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="14dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="14dp"
+        android:paddingBottom="10dp">
+
+        <ImageView
+            android:id="@+id/ivAlbumArt"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginEnd="14dp"
+            android:background="@drawable/bg_pill_badge"
+            android:contentDescription="Album Art"
+            android:padding="14dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_music_note" />
+
+        <LinearLayout
+            android:id="@+id/layoutNowPlayingInfo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingEnd="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvMediaSourceBadge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_pill_badge"
+                    android:letterSpacing="0.06"
+                    android:paddingStart="6dp"
+                    android:paddingTop="1dp"
+                    android:paddingEnd="6dp"
+                    android:paddingBottom="1dp"
+                    android:text="STANDBY"
+                    android:textColor="@color/accent_orange"
+                    android:textSize="10sp" />
+
+                <com.e46.boardlauncher.ui.EqualizerView
+                    android:id="@+id/equalizerView"
+                    android:layout_width="20dp"
+                    android:layout_height="14dp"
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvTrackTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif-medium"
+                android:maxLines="1"
+                android:text="No Active Audio Stream"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvTrackArtist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Start Spotify, YouTube Music, or Radio"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/btnMediaPrev"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:background="@drawable/bg_dock_button"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="center"
+                android:contentDescription="Previous Track"
+                android:src="@drawable/ic_prev" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/btnMediaPlayPause"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/bg_dock_button"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/ivMediaPlayPause"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:contentDescription="Play or Pause"
+                android:src="@drawable/ic_play" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/btnMediaNext"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/bg_dock_button"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="center"
+                android:contentDescription="Next Track"
+                android:src="@drawable/ic_next" />
+        </FrameLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="44dp"
+    android:viewportWidth="160"
+    android:viewportHeight="56">
+    <!-- Clean E46 3-box sedan silhouette line art -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M12,38 H26 M44,38 H114 M132,38 H148 L146,27 L122,24 L98,12 H54 L34,24 L14,27 Z"
+        android:strokeColor="#F2F4F7"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:strokeWidth="1.75" />
+    <!-- Window line -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M44,24 L57,15 H95 L112,24 Z M76,15 V24"
+        android:strokeColor="#9AA1A9"
+        android:strokeLineJoin="round"
+        android:strokeWidth="1.3" />
+    <!-- Front & Rear Wheels -->
+    <path
+        android:fillColor="#15181C"
+        android:pathData="M35,38 A9,9 0 1,0 35,37.9 Z"
+        android:strokeColor="#F2F4F7"
+        android:strokeWidth="1.75" />
+    <path
+        android:fillColor="#15181C"
+        android:pathData="M123,38 A9,9 0 1,0 123,37.9 Z"
+        android:strokeColor="#F2F4F7"
+        android:strokeWidth="1.75" />
+</vector>

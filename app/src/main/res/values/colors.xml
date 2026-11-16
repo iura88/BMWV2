@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="pure_black">#000000</color>
+    <color name="bg_root">#0A0B0C</color>
+    <color name="bg_dock">#101215</color>
+    <color name="bg_card">#15181C</color>
+    <color name="bg_card_elevated">#1D2127</color>
+    <color name="border_subtle">#282D34</color>
+
+    <color name="text_primary">#F2F4F7</color>
+    <color name="text_secondary">#9AA1A9</color>
+    <color name="text_muted">#636A73</color>
+
+    <color name="accent_orange">#FF6A1A</color>
+    <color name="accent_m_light_blue">#81C4FF</color>
+    <color name="accent_m_dark_blue">#0066B1</color>
+    <color name="accent_m_red">#E7222E</color>
+    <color name="accent_ice_white">#E6E8EB</color>
+</resources>

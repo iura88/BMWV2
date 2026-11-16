@@ -1,0 +1,1 @@
+-keep class com.e46.boardlauncher.** { *; }

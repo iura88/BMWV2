@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">E46 Board Monitor</string>
+    <string name="notification_listener_label">E46 Media Bridge</string>
+
+    <string name="header_home">BOARD MONITOR // COCKPIT</string>
+    <string name="header_drawer">BOARD MONITOR // APPLICATIONS</string>
+    <string name="header_settings">BOARD MONITOR // VEHICLE &amp; SYSTEM</string>
+
+    <string name="slot_nav_title">Navigation</string>
+    <string name="slot_nav_tag">NAVIGATION</string>
+    <string name="slot_media_title">Media</string>
+    <string name="slot_media_tag">AUDIO / MEDIA</string>
+    <string name="slot_phone_title">Phone</string>
+    <string name="slot_phone_tag">TELEPHONE</string>
+    <string name="slot_fourth_title">System</string>
+    <string name="slot_fourth_tag">UTILITY</string>
+
+    <string name="dim_off">DIM OFF</string>
+    <string name="dim_on">DIM ON</string>
+    <string name="not_assigned">Not Assigned</string>
+    <string name="err_app_not_found">Assigned application is not installed</string>
+</resources>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="112dp"
+    android:layout_margin="6dp"
+    android:background="@drawable/bg_card_selectable"
+    android:clickable="true"
+    android:focusable="true"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <View
+        android:id="@+id/viewPinIndicator"
+        android:layout_width="24dp"
+        android:layout_height="3dp"
+        android:layout_marginBottom="6dp"
+        android:background="@color/accent_orange"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/ivAppIcon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:contentDescription="App Icon"
+        android:scaleType="fitCenter" />
+
+    <TextView
+        android:id="@+id/tvAppLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="Application"
+        android:textColor="@color/text_primary"
+        android:textSize="14sp" />
+
+</LinearLayout>
